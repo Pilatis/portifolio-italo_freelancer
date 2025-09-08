@@ -1,69 +1,80 @@
-# React + TypeScript + Vite
+![](https://i.imgur.com/aUVHd1c.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ⚡ abdulrahman.id
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I've decided to open-source my latest portfolio website! it has dynamic content management to add projects and posts using Contentful CMS, and was built using Next.js and Chakra UI.
 
-## Expanding the ESLint configuration
+Refer to [Next.js](https://nextjs.org/docs/) and [Chakra UI](https://chakra-ui.com/docs) documentation to learn more.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Feel free to fork this repository to make your own portfolio, and if you liked the repo, kindly support it by giving it a star ⭐!
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Get started
+### Getting the API Keys
+Create an `.env.local` and follow the variable name based on `.env.example` and get the API Keys based on the steps below  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+<details>
+<summary>Contentful API Keys</summary>
+<p>
+<br>
+1. Create a <a href="https://www.contentful.com/sign-up/">Contentful</a> account <br>
+2. Add a Community Space (It's free!)  <br>
+3. Choose "I create content"  <br>
+4. Go to content model and start to add content type  <br>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> 📌  In this portfolio website, it has 5 Content type which is:  
+> > ~~1. BlogPosts~~  
+> > After the [⚡2.0.0 update](https://github.com/abdulrcs/abdulrahman.id/pull/17), I use Github Issues as blog content!  
+> > More details about this on: https://abdulrahman.id/blog/unleash-your-dev-blog-write-more-with-github-issues-as-your-cms
+> 2. FeaturedProjects
+> 3. Projects
+> 4. Introduction
+> 5. ContactMe
+> 
+> You must add this exact name since it's the ID that's used in the code.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+5. Add the content type according to these fields:  <br>
+	![](https://i.imgur.com/OD1oWG2.png)
+	![](https://i.imgur.com/nIkloDk.png)
+	![](https://user-images.githubusercontent.com/54136956/166127110-7baaef65-87b1-4f89-bbf5-eae3207f9ba6.png)
+	![image](https://user-images.githubusercontent.com/54136956/166127116-66f51c82-8944-4cf6-9ecf-cdcc6e2b10a2.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+6. Go to settings -> API Keys -> Content Delivery / Preview tokens -> "Your space name"
+copy the Space ID and Content Delivery API access token  <br>
+7. Put it into the environment variables according to `.env.example` and you're all set! <br>
+</p>
+</details>
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+<details>
+<summary>Google Analytics API Keys</summary>
+<p>
+<br>
+  1. Create a <a href="https://analytics.google.com/">Google Analytics</a> account, in the <i>property settings</i> part, don't forget to <b>turn on Universal Analytics</b><br>
+  2. After that, you'll see a code starting with <code>UA-</code> <br>
+  3. Copy those code and put it into environment variables according to <code>env.example</code> and done! <br>
+  </p>
+</details>  
+
+### Starting the Project
+Install the dependencies with `npm i` or `yarn`  
+Start the project by `npm run dev` or `yarn dev`  
+  
+### Deployment
+You can deploy easily by using [Vercel](https://vercel.com/) 🎉  
+  
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fabdulrcs%2Fabdulrahman.id)
+
+## 📌 Overview
+`pages/index.js` = Homepage  
+`pages/projects/index.js` = Projects archive page  
+`pages/blog/index.js` = Blog listings page  
+`pages/blog/[slug].js` = Blog post page  
+
+## ⚙ Tech Stack
+- Next.js
+- Chakra UI
+- Contentful CMS
+- MDX (next-mdx-remote)
+- Google Analytics (react-ga)
