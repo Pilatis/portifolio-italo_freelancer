@@ -15,7 +15,7 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           { property: 'twitter:card', content: 'summary_large_image' },
           {
             property: 'twitter:url',
-            content: `https://abdulrahman.id/projects/${slug}`,
+            content: `https://italosantana.dev/projects/${slug}`,
           },
           { property: 'twitter:title', content: title },
           {
@@ -24,16 +24,16 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           },
           { property: 'twitter:image', content: image },
         ]}
-        canonical={`https://abdulrahman.id/projects/${slug}`}
+        canonical={`https://italosantana.dev/projects/${slug}`}
         description={summary}
         openGraph={{
-          url: `https://abdulrahman.id/projects/${slug}`,
-          site_name: 'Abdul Rahman',
+          url: `https://italosantana.dev/projects/${slug}`,
+          site_name: 'Italo Santana',
           title: title,
           description: summary,
           type: 'article',
           article: {
-            authors: ['Abdul Rahman'],
+            authors: ['Italo Santana'],
             publishedTime: publishedDate,
             modifiedTime: publishedDate,
             tags: ['Programming', 'Web Development', 'Software Engineering'],
@@ -48,15 +48,15 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
         title={title}
       />
       <ArticleJsonLd
-        authorName="Abdul Rahman"
+        authorName="Italo Santana"
         dateModified={publishedDate}
         datePublished={publishedDate}
         description={summary}
         images={[image]}
         publisherLogo="https://imagizer.imageshack.com/a/img923/7612/A5tDeP.png"
-        publisherName="Abdul Rahman"
+        publisherName="Italo Santana"
         title={title}
-        url={`https://abdulrahman.id/projects/${slug}`}
+        url={`https://italosantana.dev/projects/${slug}`}
       />
     </>
   )

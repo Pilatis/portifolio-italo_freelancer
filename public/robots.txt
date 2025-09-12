@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://italosantana.dev
+
+# Sitemaps
+Sitemap: https://italosantana.dev/sitemap.xml
