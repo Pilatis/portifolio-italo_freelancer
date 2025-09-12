@@ -3,6 +3,11 @@ import { ArticleJsonLd, NextSeo } from 'next-seo'
 import React from 'react'
 
 const NextSeoData = ({ slug, metadata, publishedDate }) => {
+  // Verificar se metadata e suas propriedades existem
+  const title = metadata?.title || 'Project'
+  const summary = metadata?.summary || metadata?.frontmatter?.summary || 'Project description'
+  const image = metadata?.imageUrl || metadata?.frontmatter?.image || ''
+
   return (
     <>
       <NextSeo
@@ -10,22 +15,22 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           { property: 'twitter:card', content: 'summary_large_image' },
           {
             property: 'twitter:url',
-            content: `https://abdulrahman.id/blog/${slug}`,
+            content: `https://abdulrahman.id/projects/${slug}`,
           },
-          { property: 'twitter:title', content: metadata.title },
+          { property: 'twitter:title', content: title },
           {
             property: 'twitter:description',
-            content: metadata.frontmatter.summary,
+            content: summary,
           },
-          { property: 'twitter:image', content: metadata.frontmatter.image },
+          { property: 'twitter:image', content: image },
         ]}
-        canonical={`https://abdulrahman.id/blog/${slug}`}
-        description={metadata.frontmatter.summary}
+        canonical={`https://abdulrahman.id/projects/${slug}`}
+        description={summary}
         openGraph={{
-          url: `https://abdulrahman.id/blog/${slug}`,
+          url: `https://abdulrahman.id/projects/${slug}`,
           site_name: 'Abdul Rahman',
-          title: metadata.title,
-          description: metadata.frontmatter.summary,
+          title: title,
+          description: summary,
           type: 'article',
           article: {
             authors: ['Abdul Rahman'],
@@ -35,23 +40,23 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           },
           images: [
             {
-              url: metadata.frontmatter.image,
-              alt: metadata.title,
+              url: image,
+              alt: title,
             },
           ],
         }}
-        title={metadata.title}
+        title={title}
       />
       <ArticleJsonLd
         authorName="Abdul Rahman"
         dateModified={publishedDate}
         datePublished={publishedDate}
-        description={metadata.frontmatter.summary}
-        images={[metadata.frontmatter.image]}
+        description={summary}
+        images={[image]}
         publisherLogo="https://imagizer.imageshack.com/a/img923/7612/A5tDeP.png"
         publisherName="Abdul Rahman"
-        title={metadata.title}
-        url={`https://abdulrahman.id/blog/${slug}`}
+        title={title}
+        url={`https://abdulrahman.id/projects/${slug}`}
       />
     </>
   )

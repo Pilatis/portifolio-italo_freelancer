@@ -138,7 +138,8 @@ const MDXComponents = {
   ),
   img: (props) => (
     <Center>
-      <Box width={{ base: '100%', md: '80%' }} height="auto" maxWidth="1366px">
+      {/* eslint-disable-next-line chakra-ui/props-order */}
+      <Box h="auto" maxW="1366px" w={{ base: '100%', md: '80%' }}>
         <Image
           src={props.src}
           width={1366}
