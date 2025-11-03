@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import ReactGA from 'react-ga4'
 
@@ -32,14 +32,8 @@ import useUtterances from '../../hook/useUtterances'
 import Image from 'next/image'
 
 export default function Post({ project }) {
-  const [views, setViews] = useState('...')
-
   const router = useRouter()
   const { slug } = router.query
-  useEffect(() => {
-    // Mock views for demo purposes
-    setViews(Math.floor(Math.random() * 1000) + 100)
-  }, [slug])
 
   const [activeId, setActiveId] = useState()
   const toc = [] // Empty TOC for now
@@ -96,9 +90,6 @@ export default function Post({ project }) {
               {project.summary}
             </Text>
             <HStack spacing={2}>
-              <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>
-                {views} views
-              </Text>
               {project.githubLink && (
                 <>
                   <Text>-</Text>
@@ -154,14 +145,6 @@ export default function Post({ project }) {
               <Text color="textSecondary" fontSize="md">
                 <strong>Technologies used:</strong> {project.techStack}
               </Text>
-              <br />
-              <Text color="textSecondary" fontSize="md">
-                <strong>Project Date:</strong> {new Date(project.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </Text>
             </ProjectContainer>
           </Stack>
 
@@ -178,17 +161,32 @@ export default function Post({ project }) {
             <Text color="textSecondary" fontSize="sm">
               <strong>Category:</strong> {project.category}
             </Text>
-            <Text color="textSecondary" fontSize="sm">
-              <strong>Views:</strong> {views}
-            </Text>
             {project.githubLink && (
               <Text color="textSecondary" fontSize="sm">
-                <strong>Repository:</strong> Available
+                <strong>Repository:</strong>{' '}
+                {/* eslint-disable-next-line chakra-ui/props-order */}
+                <Link
+                  href={project.githubLink}
+                  color="button1"
+                  isExternal
+                  onClick={() => handleClick(`${project.title}_github_sidebar`)}
+                >
+                  View on GitHub
+                </Link>
               </Text>
             )}
             {project.deployLink && (
               <Text color="textSecondary" fontSize="sm">
-                <strong>Live Demo:</strong> Available
+                <strong>Live Demo:</strong>{' '}
+                {/* eslint-disable-next-line chakra-ui/props-order */}
+                <Link
+                  href={project.deployLink}
+                  color="button1"
+                  isExternal
+                  onClick={() => handleClick(`${project.title}_livesite_sidebar`)}
+                >
+                  Visit Site
+                </Link>
               </Text>
             )}
           </Stack>

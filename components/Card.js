@@ -138,7 +138,11 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
             </Stack>
             <Stack isInline>{Tags}</Stack>
             <Divider />
-            <Text color="textSecondary" fontSize={['sm', 'md']}>
+            <Text 
+              color="textSecondary" 
+              fontSize={['sm', 'md']}
+              noOfLines={3}
+            >
               {desc}
             </Text>
           </Stack>

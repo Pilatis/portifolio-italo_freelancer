@@ -26,10 +26,10 @@ export default function AboutMe() {
       action: event,
     })
   }
-  const MoreInfo = ({ text, content }) => {
+  const MoreInfo = ({ text, content, noSpaceBefore, noSpaceAfter }) => {
     return (
       <>
-        {' '}
+        {!noSpaceBefore && ' '}
         {isLargerThan800 ? (
           <Popover isLazy placement="right" trigger="hover">
             <PopoverTrigger>
@@ -52,7 +52,8 @@ export default function AboutMe() {
           <Text as="span" color="button1">
             {text}
           </Text>
-        )}{' '}
+        )}
+        {!noSpaceAfter && ' '}
       </>
     )
   }
@@ -65,42 +66,74 @@ export default function AboutMe() {
             <Heading fontFamily="Ubuntu" fontSize="2xl">
               ⚡ About Me
             </Heading>
-            <Text
-              color="textSecondary"
-              fontSize={{ base: '14px', md: '16px' }}
-              whiteSpace="pre-line"
-            >
-              Hey! I'm Italo Santana, a Computer Science student at the beginning of my career with experience in freelance projects involving data ingestion, transformation, and visualization. <br />
-              <br /> I have a strong interest in{' '}
+            <Stack spacing={2}>
+              <Text
+                color="textSecondary"
+                fontSize={{ base: '14px', md: '16px' }}
+                whiteSpace="pre-line"
+              >
+                Computer Science Student | Focused on Data, ML & BI | Curious, Collaborative and Exploring New Technologies
+              </Text>
+              <Text
+                color="textSecondary"
+                fontSize={{ base: '14px', md: '16px' }}
+                whiteSpace="pre-line"
+              >
+              Computer Science student with experience in data analysis, Machine Learning, and BI projects. I'm interested in exploring different areas of technology and continuously learning, collaborating with multidisciplinary teams to deliver data solutions with real impact. Experience in{' '}
               <MoreInfo
-                content="Data Engineering involves designing and building systems for collecting, storing, and processing data at scale."
-                text="Data Engineering"
+                content="Python is a versatile programming language widely used for data science, machine learning, and automation."
+                text="Python"
+                noSpaceAfter
               />
-              and I'm currently exploring{' '}
+              ,{' '}
               <MoreInfo
-                content="Machine Learning Engineering focuses on deploying ML models in production environments and building ML pipelines."
-                text="Machine Learning Engineering"
+                content="SQL (Structured Query Language) is used for managing and querying relational databases."
+                text="SQL"
+                noSpaceBefore
+                noSpaceAfter
               />
-              with a focus on solutions using{' '}
+              ,{' '}
               <MoreInfo
-                content="Python, SQL, Spark, Airflow, and cloud computing platforms like AWS and Azure."
-                text="Python, SQL, Spark, Airflow, and cloud computing (AWS & Azure)"
+                content="Apache Spark is a unified analytics engine for large-scale data processing."
+                text="Spark"
+                noSpaceBefore
+                noSpaceAfter
               />
-              <br />
-              <br />
-              Currently, I'm working on developing{' '}
+              ,{' '}
               <MoreInfo
-                content="Data pipelines are automated processes that move and transform data from various sources to destinations for analysis."
-                text="robust and scalable data pipelines"
+                content="Apache Airflow is a platform to programmatically author, schedule, and monitor workflows."
+                text="Airflow"
+                noSpaceBefore
+                noSpaceAfter
               />
-              aimed at improving data quality and availability to support decision-making processes.
+              ,{' '}
+              <MoreInfo
+                content="Power BI is a business analytics tool that provides interactive visualizations and business intelligence capabilities."
+                text="Power BI"
+                noSpaceBefore
+                noSpaceAfter
+              />
+              {' '}and{' '}
+              <MoreInfo
+                content="Scalable data pipelines are automated processes that efficiently move and transform large volumes of data from various sources to destinations for analysis."
+                text="scalable data pipelines"
+                noSpaceBefore
+                noSpaceAfter
+              />
+              , applying engineering best practices and{' '}
+              <MoreInfo
+                content="Exploratory Data Analysis (EDA) is an approach to analyzing datasets to summarize their main characteristics, often with visual methods."
+                text="exploratory data analysis (EDA)"
+                noSpaceBefore
+              />
+              . <br />
               <br />
-              <br />
-              I believe that data can transform decisions into results, and I'm ready to be part of this transformation! 🚀
-            </Text>
+              Motivated to join rotation programs that offer practical learning and technical and leadership development, contributing to data-driven decision-making.
+              </Text>
+            </Stack>
           </Stack>
         </SlideUpWhenVisible>
-        <SlideUpWhenVisible>
+        {/*<SlideUpWhenVisible>
           <Flex align="center" justify="center">
             <Box
               pos="relative"
@@ -126,7 +159,7 @@ export default function AboutMe() {
               />
             </Box>
           </Flex>
-        </SlideUpWhenVisible>
+        </SlideUpWhenVisible>*/}
       </SimpleGrid>
     </>
   )

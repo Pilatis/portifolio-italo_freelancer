@@ -17,6 +17,19 @@ export const mockData = {
 
   projects: [
     {
+      title: "Intelligent Business Insights Dashboard",
+      description: "Automated business performance analysis with AI and interactive visualization. The project simulates the complete data flow in a corporate environment — from data generation and transformation to Machine Learning application and business insights visualization. Demonstrates how data can be transformed into intelligent and strategic decisions through ETL pipeline, exploratory data analysis (EDA), linear regression predictive model, and interactive visualizations.",
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+      tags: ["Python", "Pandas", "Scikit-learn", "Power BI"],
+      slug: "intelligent-business-insights-dashboard",
+      summary: "Complete data pipeline with ETL, Machine Learning and business insights visualization...",
+      techStack: "Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Power BI, Streamlit",
+      category: "Data Analytics",
+      githubLink: "https://github.com/italosantana/IntelligentBusinessInsights",
+      deployLink: null,
+      date: "2024-02-01"
+    },
+    {
       title: "E-commerce Platform",
       description: "A complete e-commerce platform built with React, Node.js and MongoDB. Includes payment system, inventory management and admin panel.",
       imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
