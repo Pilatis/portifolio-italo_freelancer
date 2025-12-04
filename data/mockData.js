@@ -106,6 +106,19 @@ export const mockData = {
       githubLink: "https://github.com/italosantana/analytics-dashboard",
       deployLink: "https://analytics-demo.vercel.app",
       date: "2023-12-15"
+    },
+    {
+      title: "Customer Churn Prediction",
+      description: "Full-stack Machine Learning solution to predict customer churn in a telecom company. Demonstrates production-level ML engineering skills including data preprocessing, feature engineering, Random Forest Classifier model with versioned pipelines, real-time predictions via FastAPI REST API, Dockerization for reproducible deployment, and cloud deployment-ready for Render/Railway with automated model versioning and manifest tracking.",
+      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop",
+      tags: ["Python", "Scikit-Learn", "FastAPI", "Docker", "Machine Learning"],
+      slug: "customer-churn-prediction",
+      summary: "Production-ready ML solution for customer churn prediction with versioned pipelines and REST API",
+      techStack: "Python 3.11, Pandas, NumPy, Scikit-Learn, FastAPI, Joblib, Docker, Render/Railway",
+      category: "Machine Learning",
+      githubLink: "https://github.com/italosantana/customer-churn-prediction",
+      deployLink: null,
+      date: "2024-02-15"
     }
   ],
 
